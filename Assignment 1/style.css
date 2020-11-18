@@ -1,0 +1,176 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+.navbar{
+	width: 100%;
+	height: 10vh;
+	background-color: #102143;
+	display: flex;
+	align-items: center;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+
+nav{
+	flex: 1;
+	text-align: right;
+}
+
+nav ul{
+	display: inline-block;
+	text-decoration: none;
+}
+
+nav ul li{
+	display: inline-block;
+	margin-right: 20px;
+}
+
+a{
+	text-decoration: none;
+	color: #fff;
+	font-weight: 900;
+	font-size: 17px;
+}
+
+.banner{
+  position: relative;
+  text-align: center;
+  color: black;
+  height: 500px;
+  background-color: darkblue; 
+}
+
+.banner img{
+	width: 70%;
+	height: 400px;
+	
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 70px;
+  left: 16px;
+}
+
+button{
+  top: 92%;
+  left: 6%;
+  transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  position: absolute;
+  display: block;
+}
+
+
+/*.punchline p{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}*/
+
+/* Create three equal columns that floats next to each other */
+.service_column {
+  float: left;
+  width: 32.66%;
+  padding: 10px;
+  height: 300px; /* Should be removed. Only for demonstration */
+  margin: 0px 5px;
+  position: relative;
+}
+
+.service_column h2{
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Clear floats after the columns */
+.service_row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.logo1 {
+    /* to keep all the images on the one line*/
+    white-space: nowrap;
+}
+
+.logo1 img {
+	width: 245px;
+	height: 150px;
+    background-color: #ffffff;
+    padding: 30px;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 6px;
+}
+ .fa-facebook {
+  background: #3B5998;
+  color: white;
+ }
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.footerleft{
+  width: 50%;
+  height: 25vh;
+  float: left;
+  display: block;
+  background-color: #102143;
+  position: relative;
+  padding: 10px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.footerright{
+	width: 50%;
+	height:25vh;
+	float:right; 
+	display: block;
+	background-color: #102143;
+	text-align: right;
+	position: relative;
+	padding: 10px;
+	color: #fff;
+}
+
+.footerlinks ul a{
+	text-decoration: none;
+}
+
+.footerlinks a{
+	color: #fff;
+}
+.footerlinks li{
+	list-style-type: none;
+	
+}
