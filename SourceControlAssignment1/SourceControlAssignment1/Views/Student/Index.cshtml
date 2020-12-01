@@ -1,0 +1,82 @@
+﻿@model SourceControlAssignment1.Models.Register
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Employee Registration Form</h2>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width"/>
+        <title>REGISTRATION FORM</title>
+    </head>
+
+    <body>
+        @using (Html.BeginForm("Index", "Student",FormMethod.Post))
+        {
+        <table cellpadding="2" cellspacing="2" border="0">
+            <tr>
+                <td>UserId</td>
+                <td>@Html.TextAreaFor(model => model.UserId)</td>
+                <td>@Html.ValidationMessageFor(model => model.UserId)</td>
+            </tr>
+
+            <tr>
+                <td>UserName</td>
+                <td>@Html.TextAreaFor(model => model.UserName)</td>
+                <td>@Html.ValidationMessageFor(model => model.UserName)</td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+                <td>@Html.PasswordFor(model => model.Password)</td>
+                <td>@Html.ValidationMessageFor(model => model.Password)</td>
+            </tr>
+
+            <tr>
+                <td>Confirm Password</td>
+                <td>@Html.PasswordFor(model => model.ConfirmPassword)</td>
+                <td>@Html.ValidationMessageFor(model => model.ConfirmPassword)</td>
+            </tr>
+
+            <tr>
+                <td>Email Address</td>
+                <td>@Html.TextAreaFor(model => model.Email)</td>
+                <td>@Html.ValidationMessageFor(model => model.Email)</td>
+            </tr>
+
+            <tr>
+                <td>Age</td>
+                <td>@Html.TextAreaFor(model => model.Age)</td>
+                <td>@Html.ValidationMessageFor(model => model.Age)</td>
+            </tr>
+
+            <tr>
+                <td>Mobile No</td>
+                <td>@Html.TextAreaFor(model => model.Mobile)</td>
+                <td>@Html.ValidationMessageFor(model => model.Mobile)</td>
+            </tr>
+
+            <tr>
+                <td>Joining Date</td>
+                <td>@Html.TextAreaFor(model => model.JoiningDate)</td>
+                <td>@Html.ValidationMessageFor(model => model.JoiningDate)</td>
+            </tr>
+
+            <tr>
+                <td>Website</td>
+                <td>@Html.TextAreaFor(model => model.Website)</td>
+                <td>@Html.ValidationMessageFor(model => model.Website)</td>
+            </tr>
+
+            <tr>
+                <td>&nbsp;</td>
+                <td colspan="2"><input type="submit" value="SAVE" /></td>
+            </tr>
+
+        </table>
+        }
+    </body>
+</html>
