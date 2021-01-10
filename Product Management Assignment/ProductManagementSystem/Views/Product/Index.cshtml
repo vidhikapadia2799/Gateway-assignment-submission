@@ -1,0 +1,136 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@model IPagedList<ProductManagementSystem.Models.ProductTbl>
+
+<head>
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+</head>
+
+<p>
+    <a href="@Url.Action("Create","Product")" class="btn btn-default " style="margin-top:20px;margin-bottom:5px "><i class="fa fa-plus" style="padding:5px"></i>Add Product</a>
+</p> 
+@using (Html.BeginForm("Index","Product",FormMethod.Get))
+{
+    <b>Search By</b>
+    @Html.RadioButton("SearchBy","ProductCategory")<text>Product Category</text>
+    @Html.RadioButton("SearchBy","ProductName")<text>Product Name</text>
+    @Html.TextBox("search")<input type="submit" value="Search"/>
+}
+
+<h2 class="text-success">@TempData["update data msg"]</h2>
+
+    <h2 class="text-success">@TempData["successcount"]</h2>
+    <h2 class="text-danger">@TempData["failedcount"]</h2>
+
+<h4 class="text-success">@TempData["inserted product successfully"]</h4>
+<style>
+    a{
+        color:#ffffff;
+    }
+</style>
+
+@using (Html.BeginForm("Delete", "Product", FormMethod.Post))
+{
+<table class="table table-bordered">
+    <tr class="bg-primary text-center">
+        <th class="text-center">Select</th>
+
+        <th class="text-center">
+            @Html.ActionLink("ProductCategory", "Index", new { sortBy = ViewBag.SortProductCategoryParameter, SearchBy = Request.QueryString["SearchBy"], search = Request.QueryString["search"] })
+            <i class="fa fa-sort"></i>
+        </th>
+
+        <th class="text-center" style="color:white">
+
+            @Html.ActionLink("ProductName", "Index", new { sortBy = ViewBag.SortProductNameParameter, SearchBy = Request.QueryString["SearchBy"], search = Request.QueryString["search"] })
+            <i class="fa fa-sort"></i>
+        </th>
+
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.First().ProductPrice)
+        </th>
+
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.First().ProductQuantity)
+        </th>
+
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.First().ShortDesc)
+        </th>
+
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.First().LongDesc)
+        </th>
+
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.First().SmallImage)
+        </th>
+
+        <th class="text-center">
+            @Html.DisplayNameFor(model => model.First().LargeImage)
+        </th>
+
+        <th class="text-center">Actions</th>
+    </tr>
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td colspan="5">The typed text is not available !! </td>
+        </tr>
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td class="text-center">
+                    <input type="checkbox" value="@item.Id" name="id" />
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.ProductCategory)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.ProductPrice)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.ProductQuantity)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.ShortDesc)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => item.LongDesc)
+                </td>
+                <td class="text-center">
+                    <img src="@Url.Content(item.SmallImage)" width="50" height="50" alt="Not Found" class="border border-dark img-rounded " />
+                </td>
+                <td class="text-center">
+                    <img src="@Url.Content(item.LargeImage)" width="80" height="80" alt="Not Found" class="border border-dark img-rounded " />
+                </td>
+                <td class="text-center">
+                    <a href="@Url.Action("Edit","Product",new { id = item.Id })" class="btn btn-default"><i class="fa fa-pencil" style="padding:5px"></i> Edit</a>
+                    <a href="@Url.Action("Details","Product",new { id = item.Id })" class="btn btn-default"><i class="fa fa-info" style="padding:5px"></i> Details</a>
+                </td>
+            </tr>
+        }
+
+    }
+
+</table>
+
+    <input type="submit" value="Delete Product" class="btn btn-primary" onclick="return confirm('Are you sure you want to Delete the Selected Product ?');" />
+}
+@Html.PagedListPager(Model,page=>Url.Action("Index",new
+{
+    page,
+    SearchBy = Request.QueryString["SearchBy"],
+    search = Request.QueryString["search"],
+    sortBy = Request.QueryString["sortBy"]
+}),
+    new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true }
+)
+

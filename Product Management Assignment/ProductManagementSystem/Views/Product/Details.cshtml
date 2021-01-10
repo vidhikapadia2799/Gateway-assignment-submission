@@ -1,0 +1,84 @@
+﻿@model ProductManagementSystem.Models.ProductModel
+
+<h1>Details of a Product</h1>
+<hr />
+
+<style>
+    dt, dd {
+        padding: 10px;
+    }
+</style>
+
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCategory)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductCategory)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LongDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LongDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SmallImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SmallImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LargeImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LargeImage)
+        </dd>
+
+    </dl>
+</div>
+<p style="padding:15px">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

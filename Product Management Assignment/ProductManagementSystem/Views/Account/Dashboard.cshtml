@@ -1,0 +1,28 @@
+﻿@model ProductManagementSystem.Models.Logintbl
+<head>
+    <link href="~/Content/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Dashboard</h3>
+            </div>
+            <ul class="lisst-unstyled components">
+                <li>
+                    <a href="@Url.Action("Index","Product")">Product List</a>
+                </li>
+
+                <li>
+                    <a href="@Url.Action("Create","Product")">Add Product</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+            <h1 class="text-center">Welcome to the Dashboard...</h1>
+            @*<h1>@HttpContext.Current.User.Identity.Name</h1>*@
+        </div>
+    </div>
+
+</body>

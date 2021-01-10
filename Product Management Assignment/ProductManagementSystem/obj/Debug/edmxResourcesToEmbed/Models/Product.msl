@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ProductManagementModelStoreContainer" CdmEntityContainer="ProductManagementEntities">
+    <EntitySetMapping Name="ProductTbls">
+      <EntityTypeMapping TypeName="ProductManagementModel.ProductTbl">
+        <MappingFragment StoreEntitySet="ProductTbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ProductCategory" ColumnName="ProductCategory" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductPrice" ColumnName="ProductPrice" />
+          <ScalarProperty Name="ProductQuantity" ColumnName="ProductQuantity" />
+          <ScalarProperty Name="ShortDesc" ColumnName="ShortDesc" />
+          <ScalarProperty Name="LongDesc" ColumnName="LongDesc" />
+          <ScalarProperty Name="SmallImage" ColumnName="SmallImage" />
+          <ScalarProperty Name="LargeImage" ColumnName="LargeImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usertbls">
+      <EntityTypeMapping TypeName="ProductManagementModel.Usertbl">
+        <MappingFragment StoreEntitySet="Usertbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ConfirmPassword" ColumnName="ConfirmPassword" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MobileNo" ColumnName="MobileNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logintbls">
+      <EntityTypeMapping TypeName="ProductManagementModel.Logintbl">
+        <MappingFragment StoreEntitySet="Logintbl">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
