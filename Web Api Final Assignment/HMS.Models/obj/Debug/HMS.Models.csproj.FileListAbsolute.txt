@@ -1,0 +1,6 @@
+C:\Users\vidhi\source\repos\HMS.WebApi\HMS.Models\bin\Debug\HMS.Models.dll
+C:\Users\vidhi\source\repos\HMS.WebApi\HMS.Models\bin\Debug\HMS.Models.pdb
+C:\Users\vidhi\source\repos\HMS.WebApi\HMS.Models\obj\Debug\HMS.Models.csprojAssemblyReference.cache
+C:\Users\vidhi\source\repos\HMS.WebApi\HMS.Models\obj\Debug\HMS.Models.csproj.CoreCompileInputs.cache
+C:\Users\vidhi\source\repos\HMS.WebApi\HMS.Models\obj\Debug\HMS.Models.dll
+C:\Users\vidhi\source\repos\HMS.WebApi\HMS.Models\obj\Debug\HMS.Models.pdb

@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "15f0e805-d5db-4c37-a911-5920a86cd5d6",
+		"name": "Hotel Management System Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://localhost:44328/api/hotel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"Name\": \"Hotel H\",\r\n    \"Address\": \"Near Nana Bazaar\",\r\n    \"City\": \"Vallabh VidhyaNagar\",\r\n    \"Pincode\": \"388621\",\r\n    \"ContactNumber\": \"1234567890\",\r\n    \"ContactPerson\": \"Vidhi Kapadia\",\r\n    \"Website\": \"https://www.hotelh.com/\",\r\n    \"Facebook\": \"https://www.facebook.com/hotelh\",\r\n    \"Twitter\": \"https://twitter.com/hotelh\",\r\n    \"IsActive\": \"True\",\r\n    \"CreatedBy\": \"Vidhi Kapadia\",\r\n    \"UpdatedDate\": \"2021-19-18T00:00:00\",\r\n    \"UpdatedBy\": \"Vidhi Kapadia\"\r\n }\r\n  \r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/hotel",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"hotel"
+					]
+				},
+				"description": "POST 5-10 hotels with details of hotel "
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44328/api/room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"RoomName\" : \"Duplex\",\r\n    \"RoomCategory\" : \"Category3\",\r\n    \"RoomPrize\" : \"2300\",\r\n    \"RoomCreatedBy\" : \"Mansi Patel\",\r\n    \"RoomUpdatedBy\" : \"Mansi Patel\",\r\n    \"RoomUpdatedDate\" : \"18 January 2021\",\r\n    \"RoomIsActive\" : \"true\",\r\n    \"HotelId\":\"3\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/room",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"room"
+					]
+				},
+				"description": "3-5 rooms in each hotel with different price and different category"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44328/api/hotel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44328/api/hotel",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"hotel"
+					]
+				},
+				"description": "GET all hotels sort by alphabetic order. Response: List of hotels "
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44328/api/hotel/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:44328/api/hotel/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"hotel",
+						"1"
+					]
+				},
+				"description": "GET hotel when search by id"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44328/api/room",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"RoomName\" : \"Duplex\",\r\n    \"RoomCategory\" : \"Category3\",\r\n    \"RoomPrize\" : \"4300\",\r\n    \"RoomCreatedBy\" : \"Mansi Patel\",\r\n    \"RoomUpdatedBy\" : \"Mansi Patel\",\r\n    \"RoomUpdatedDate\" : \"20 January 2021\",\r\n    \"RoomIsActive\" : \"true\",\r\n    \"HotelId\":\"1\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/room",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"room"
+					]
+				},
+				"description": "GET all rooms of hotels with optional parameter by hotel city, pin code, Price, Category. (Default\r\nsort by price of room low to high)"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44328/api/bookroom",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"BookingDate\":\"1 January 2021\",\r\n   \"BookingStatus\":\"Definitive\",\r\n   \"RoomId\":\"6\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/bookroom",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"bookroom"
+					]
+				},
+				"description": "POST Booked the room of hotel for particular date with (optional status)"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44328/api/booking",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"BookingId\": 1,\r\n   \"BookingDate\":\"18 January 2021\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/booking",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"booking"
+					]
+				},
+				"description": "PUT update booking date for any room by Id"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44328/api/bookingstatus",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"BookingId\": 1,\r\n   \"BookingStatus\":\"Deleted\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/bookingstatus",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"bookingstatus"
+					]
+				},
+				"description": "PUT update booking status by booking Id (optional status to Definitive or Cancelled)"
+			},
+			"response": []
+		},
+		{
+			"name": "https://localhost:44328/api/hotel/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"BookingId\": 1,\r\n   \"BookingStatus\":\"Deleted\"\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:44328/api/hotel/1",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "44328",
+					"path": [
+						"api",
+						"hotel",
+						"1"
+					]
+				},
+				"description": "DELETE delete booking by booking Id (change status Deleted – soft delete)"
+			},
+			"response": []
+		}
+	]
+}
